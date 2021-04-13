@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-fluid{
+  border-bottom: 0.2px solid grey;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.post{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin : 8px auto;
+}
+.logo{
+  object-fit: contain;
+  margin: 5px;
+  width: 50px;
+}
+.postcard{
+  width: 40%;
+  border: 0.2px solid pink;
+  padding: 0.5px;
+  border-radius: 2px;
+}
+.post__header{
+  display: flex;
+  padding: 3px;
+  align-items: center;
+}
+.username{
+  margin-left: 4px;
+}
+.postimage{
+  width: 100%;
+  object-fit: contain;
+  margin-top : 2px;
+  border: 0.2px;
+}
+.caption{
+  margin-top: 2px;
+  display: flex;
+  padding: 5px;
+}
+.modalform{
+  display: flex;
+  flex-direction: column;
+}
+input{
+  margin: 2px;
+}
+.formlogo{
+  margin-bottom: 5px;
+}
+.formbut{
+  background-color: blue;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
