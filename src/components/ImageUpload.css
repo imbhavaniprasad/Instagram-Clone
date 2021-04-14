@@ -1,0 +1,12 @@
+.imageupload{
+display: flex;
+margin :4px auto;
+max-width: 400px;
+flex-direction: column;
+border: 2px solid grey;
+justify-content: center;
+padding: 20px;
+}
+progress{
+    width: 100%;
+}

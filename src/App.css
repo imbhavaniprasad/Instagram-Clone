@@ -1,8 +1,24 @@
 *{
   margin: 0px;
 }
-.container-fluid{
-  border-bottom: 0.2px solid grey;
+.container-width{
+  border-bottom: 0.2px solid pink;
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.container{
+  display: flex;
+}
+.app__loginContainer >button{
+margin-left: 2px;
+}
+.loglog{
+  position: absolute;
+  right: 10%;
+  margin-top: 18px;
 }
 .post{
   display: flex;
@@ -14,31 +30,6 @@
   object-fit: contain;
   margin: 5px;
   width: 50px;
-}
-.postcard{
-  width: 40%;
-  border: 0.2px solid pink;
-  padding: 0.5px;
-  border-radius: 2px;
-}
-.post__header{
-  display: flex;
-  padding: 3px;
-  align-items: center;
-}
-.username{
-  margin-left: 4px;
-}
-.postimage{
-  width: 100%;
-  object-fit: contain;
-  margin-top : 2px;
-  border: 0.2px;
-}
-.caption{
-  margin-top: 2px;
-  display: flex;
-  padding: 5px;
 }
 .modalform{
   display: flex;

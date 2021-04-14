@@ -1,0 +1,43 @@
+.commentform{
+   display: flex;
+   border-top: 1px solid lightgray;
+}
+.comment__input{
+flex: 1;
+border: none;
+}
+.comment__submit{
+flex: 0;
+background-color: white;
+color: blue;
+border: none;
+}
+.post__comments{
+    padding: 5px;
+}
+.caption{
+    margin-top: 2px;
+    display: flex;
+    padding: 5px;
+  }
+  .postcard{
+    width: 40%;
+    border: 0.2px solid pink;
+    padding: 0.5px;
+    border-radius: 2px;
+  }
+  .post__header{
+    display: flex;
+    padding: 3px;
+    align-items: center;
+  }
+  .username{
+    margin-left: 4px;
+  }
+  .postimage{
+    width: 100%;
+    object-fit: contain;
+    margin-top : 2px;
+    border: 0.2px;
+  }
+  

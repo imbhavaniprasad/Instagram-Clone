@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Posts from './components/Posts';
 import { Button } from '@material-ui/core';
+import ImageUpload from './components/ImageUpload';
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -106,7 +107,7 @@ function App() {
     </div>
 );
   useEffect(()=>{
-    db.collection('posts').onSnapshot(snapshot=>{
+    db.collection('posts').orderBy('timestamp','desc').onSnapshot(snapshot=>{
       setUsers(snapshot.docs.map(doc => ({
         id:doc.id,
         post:doc.data()
@@ -114,10 +115,15 @@ function App() {
     })
   },[]);
   return (
+    <>
     <div className="App">
-    <Nav/>
-    <div>
-      {user?(<button type="button" onClick={()=>auth.signOut()}>
+      <div className="container-width app__header">
+            <nav className="container">
+            <div className="logo">
+            <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt="instagram"/>
+            </div>
+            <div className="loglog">
+      {user?(<button type="button" className="btn btn-primary" onClick={()=>auth.signOut()}>
                 Log Out
             </button>):
             ( <div className = "app__loginContainer">
@@ -126,7 +132,10 @@ function App() {
             </div>
         )
             }
-            
+            </div>
+            </nav>
+        </div>
+        <div>
             <Modal
                 open={open}
                 onClose={()=>setOpen(false)}
@@ -146,11 +155,18 @@ function App() {
         </div>
     {users.map((users,id)=>{
       return(
-        <Posts key={id} username={users.post.username} caption={users.post.caption} imgurl={users.post.imgurl}/>
-      );
+        <div>
+        <Posts user={user} key={id} postid={users.id} username={users.post.username} caption={users.post.caption} imgurl={users.post.imgurl}/>
+      </div>
+        );
     })}
-    
+    <hr/>
+     <center>{user?.displayName?(
+      <ImageUpload username={user.displayName}/>
+    ): <h2>You need to log in to Upload</h2>}
+            </center>
     </div>
+    </>
   );
 }
 
